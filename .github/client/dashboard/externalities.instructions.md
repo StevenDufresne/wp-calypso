@@ -1,0 +1,1 @@
+We don't want to include '@wordpress/data' library in the `/dashboard` folder.
