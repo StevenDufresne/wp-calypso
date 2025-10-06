@@ -8,6 +8,7 @@ import {
 import { resolveDeviceTypeByViewPort } from '@automattic/viewport';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { RouterProvider, type AnyRouter } from '@tanstack/react-router';
+import { useDispatch } from '@wordpress/data';
 import { useMemo, useEffect } from 'react';
 import { AnalyticsProvider, type AnalyticsClient } from './analytics';
 import { getSuperProps } from './analytics/super-props';
@@ -59,6 +60,9 @@ function AnalyticsProviderWithClient( {
 
 function Layout( { config }: { config: AppConfig } ) {
 	const router = useMemo( () => getRouter( config ), [ config ] );
+	const dispatch = useDispatch();
+
+	dispatch( {} );
 
 	return (
 		<AppProvider config={ config }>
